@@ -1,0 +1,85 @@
+<html>
+    <meta charset="UTF-8">
+    <h1>02-04 Práctica años del mundial de futbol</h1> <! 02-04 Práctica mostrar años del mundial>
+    <h3>----------------------------------------------------------------</h3>
+    <br>
+    <br>
+    <script>
+        
+        // función salto de línea doble.
+        function saltarLinea() {
+            document.write("<br>");
+            document.write("<br>");         
+            }
+
+        //función imprimir frase.
+        function imprimir(frase) {
+            document.write(frase);
+            saltarLinea();
+        }
+
+
+        // declaración de variables
+        var primerMundial = 1930; //rango de años inicia en 1930
+        var anhoInicio = parseInt(prompt("¿Desde qué año quieres los mundiales de futbol? (desde 1930)","1930"));  // ingresa año inicial de rango con el valor predeterminado "1930".
+        var anhoFin = parseInt(prompt("¿Hasta qué año quieres? (hasta 2022)","2022")); // ingresa año final de rango con el valor predeterminado "2022".
+
+
+        // el rango de años debe ser entre 1930 y 2022.
+        if(anhoInicio >= primerMundial && anhoFin <= 2022){
+
+                while(primerMundial < anhoInicio){  // compara año inicial con primer año del mundial para definir que años se realizó.  
+                    primerMundial = primerMundial + 4;               
+                }
+
+                anhoInicio = primerMundial; // redefine el año inicio al del primer mundial del rango seleccionado.
+
+                while(primerMundial <= anhoFin){ // repite mientras el primer mundial del rango es igual o menor al año final del rango ingresado.
+
+                    if(primerMundial == anhoInicio){ // compara que el año del mundial sea igual al año inicial del rango.
+
+                        while(anhoInicio <= anhoFin){ // compara que el año del contador sea menor o igual al año final del rango seleccionado.
+
+                            
+                            // compara si el año no es alguno en el que se suspendió el mundial 1942 y 1946.
+                            if(primerMundial == 1942 || primerMundial == 1946){
+
+                                imprimir("-NO- se realizó el Mundial en el año de " + anhoInicio); // imprime el mensaje cuando se suspendió mundial.
+                            }
+                            else{
+
+                                imprimir("Se realizó el Mundial en el año de " + anhoInicio); // imprime el mensaje que se realizó e mundial
+                            }
+
+                            // incrementa contadores de año mundial y rango de año inicial seleccionado.                        
+                            anhoInicio = anhoInicio + 4;
+                            primerMundial = primerMundial + 4;
+                        }
+                    }else{
+                        imprimir(primerMundial); //impresión de control.
+                    }
+                        
+                }
+
+        } else{ // si el rango de años inicial y final seleccionado no son entre 1930 y 2022, muestra error.
+
+            imprimir("¡ERROR! - El año de inicio debe ser desde 1930 y el año máximo 2022");
+        }
+        
+        imprimir("<h2>¡FIN DE PROGRAMA!</h2>");
+
+    </script>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div style="text-align: center;">
+        <h4>Práctica por Raúl Trueba Mejía - G4 2022 CDMX</h4>
+        <a href="https://www.linkedin.com/in/deepfx/"><img src="linkedin.png" alt="Contacto Raúl Trueba"></a>
+        <a><img src="one.png" alt="Contacto Raúl Trueba" width="36" height="36"></a>
+        <a><img src="logoalura.svg" alt="Contacto Raúl Trueba" width="32" height="32"></a>       
+    </div>
+</html>
